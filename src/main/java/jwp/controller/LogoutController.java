@@ -8,11 +8,11 @@ import java.io.IOException;
 
 public class LogoutController implements Controller{
     @Override
-    public void handle(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    public String handle(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         HttpSession session = req.getSession();
         session.removeAttribute("user");
 
-        resp.sendRedirect("/");
+        return "redirect:" + "/";
 
     }
 }

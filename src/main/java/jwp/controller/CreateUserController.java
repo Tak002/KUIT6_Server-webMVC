@@ -10,13 +10,14 @@ import java.io.IOException;
 
 public class CreateUserController implements Controller{
     @Override
-    public void handle(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    public String handle(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         User user = new User(req.getParameter("userId"),
                 req.getParameter("password"),
                 req.getParameter("name"),
                 req.getParameter("email"));
         MemoryUserRepository userRepository = MemoryUserRepository.getInstance();
         userRepository.addUser(user);
-        resp.sendRedirect("/user/list");
+
+        return "redirect:" + "/";
     }
 }

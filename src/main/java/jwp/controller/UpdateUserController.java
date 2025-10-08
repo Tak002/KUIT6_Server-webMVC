@@ -10,7 +10,7 @@ import java.io.IOException;
 
 public class UpdateUserController implements Controller{
     @Override
-    public void handle(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    public String handle(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String userId = req.getParameter("userId");
         String password = req.getParameter("password");
         String name = req.getParameter("name");
@@ -19,5 +19,6 @@ public class UpdateUserController implements Controller{
         User userById = MemoryUserRepository.getInstance().findUserById(userId);
         userById.update(new User(userId, password, name, email));
 
-        resp.sendRedirect("/user/list");    }
+        return "redirect:" + "/user/list";
+    }
 }
