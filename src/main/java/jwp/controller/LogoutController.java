@@ -16,7 +16,7 @@ public class LogoutController extends HttpServlet {
         HttpSession session = req.getSession();
         session.removeAttribute("user");
 
-        RequestDispatcher requestDispatcher = req.getRequestDispatcher("/");
-        requestDispatcher.forward(req, resp);
+        resp.sendRedirect("/");
+
     }
 }
