@@ -20,7 +20,7 @@ public class UserUpdateFormController extends HttpServlet {
         User user = (User) session.getAttribute("user");
         String userId = req.getParameter("userId");
 
-        if(user.getUserId().equals(userId)){
+        if(user != null && user.getUserId().equals(userId)){
             RequestDispatcher requestDispatcher = req.getRequestDispatcher("/user/updateForm.jsp");
             requestDispatcher.forward(req, resp);
         }
