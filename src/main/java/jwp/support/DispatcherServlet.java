@@ -9,6 +9,11 @@ import java.io.IOException;
 
 @WebServlet("/")
 public class DispatcherServlet extends HttpServlet {
+    private final RequestMapper requestMapper;
+
+    public DispatcherServlet() {
+        this.requestMapper = new RequestMapper();
+    }
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -31,9 +36,10 @@ public class DispatcherServlet extends HttpServlet {
     }
 
     private void handleRequest(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        System.out.println("req.getRequestURI() = " + req.getRequestURI());
-        System.out.println("req.getMethod() = " + req.getMethod());
-        System.out.println("req.getParameter(\"ex\") = " + req.getParameter("ex"));
-        resp.setStatus(HttpServletResponse.SC_OK);
+        String requestURI = req.getRequestURI();
+        String method = req.getMethod();
+        System.out.println("requestURI = " + requestURI);
+        System.out.println("method = " + method);
+        requestMapper.getMapping(requestURI, method).handle(req, resp);
     }
 }
