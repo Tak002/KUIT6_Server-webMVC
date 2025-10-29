@@ -9,14 +9,14 @@ public class SelectJdbcTemplate<T> {
     private final JdbcTemplate<T> jdbcTemplate = new JdbcTemplate<>();
 
 
-    public List<T> findAll(String userTableName, List<String> columns, Class<T> classType) throws SQLException {
+    public List<T> findAll(String userTableName, List<String> columns, Class<T> returnClassType) throws SQLException {
         String sql = "SELECT * FROM "+ userTableName;
-        return jdbcTemplate.query(sql, generateRowMapper(columns,classType));
+        return jdbcTemplate.query(sql, generateRowMapper(columns,returnClassType));
     }
 
 
     //by gpt
-    private RowMapper<T> generateRowMapper(List<String> columns, Class<T> classType) {
+    public RowMapper<T> generateRowMapper(List<String> columns, Class<T> classType) {
         return resultSet -> {
             try {
                 Object[] args = new Object[columns.size()];

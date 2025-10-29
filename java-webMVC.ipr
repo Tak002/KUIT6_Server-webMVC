@@ -168,6 +168,22 @@
       <JAVADOC />
       <SOURCES />
     </library>
+    <library name="Gradle: net.bytebuddy:byte-buddy-agent:1.12.7" type="java-imported" external-system-id="GRADLE">
+      <properties groupId="net.bytebuddy" artifactId="byte-buddy-agent" version="1.12.7" baseVersion="1.12.7" />
+      <CLASSES>
+        <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.bytebuddy/byte-buddy-agent/1.12.7/8b23f1a6afed2b787102a3625c1cfddc56b17a73/byte-buddy-agent-1.12.7.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
+    <library name="Gradle: net.bytebuddy:byte-buddy:1.12.7" type="java-imported" external-system-id="GRADLE">
+      <properties groupId="net.bytebuddy" artifactId="byte-buddy" version="1.12.7" baseVersion="1.12.7" />
+      <CLASSES>
+        <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.bytebuddy/byte-buddy/1.12.7/e2a08a3fae74979ee76a8dd67cfd37958874e0fb/byte-buddy-1.12.7.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
     <library name="Gradle: org.apache.commons:commons-dbcp2:2.6.0" type="java-imported" external-system-id="GRADLE">
       <properties groupId="org.apache.commons" artifactId="commons-dbcp2" version="2.6.0" baseVersion="2.6.0" />
       <CLASSES>
@@ -258,10 +274,18 @@
       <JAVADOC />
       <SOURCES />
     </library>
-    <library name="Gradle: org.junit.jupiter:junit-jupiter-engine:5.8.1" type="java-imported" external-system-id="GRADLE">
-      <properties groupId="org.junit.jupiter" artifactId="junit-jupiter-engine" version="5.8.1" baseVersion="5.8.1" />
+    <library name="Gradle: org.junit.jupiter:junit-jupiter-api:5.8.2" type="java-imported" external-system-id="GRADLE">
+      <properties groupId="org.junit.jupiter" artifactId="junit-jupiter-api" version="5.8.2" baseVersion="5.8.2" />
       <CLASSES>
-        <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.junit.jupiter/junit-jupiter-engine/5.8.1/21b86e08aae2720bbf017703669948be96d1388c/junit-jupiter-engine-5.8.1.jar!/" />
+        <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.junit.jupiter/junit-jupiter-api/5.8.2/4c21029217adf07e4c0d0c5e192b6bf610c94bdc/junit-jupiter-api-5.8.2.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
+    <library name="Gradle: org.junit.jupiter:junit-jupiter-engine:5.8.2" type="java-imported" external-system-id="GRADLE">
+      <properties groupId="org.junit.jupiter" artifactId="junit-jupiter-engine" version="5.8.2" baseVersion="5.8.2" />
+      <CLASSES>
+        <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.junit.jupiter/junit-jupiter-engine/5.8.2/c598b4328d2f397194d11df3b1648d68d7d990e3/junit-jupiter-engine-5.8.2.jar!/" />
       </CLASSES>
       <JAVADOC />
       <SOURCES />
@@ -274,10 +298,42 @@
       <JAVADOC />
       <SOURCES />
     </library>
-    <library name="Gradle: org.junit.platform:junit-platform-engine:1.8.1" type="java-imported" external-system-id="GRADLE">
-      <properties groupId="org.junit.platform" artifactId="junit-platform-engine" version="1.8.1" baseVersion="1.8.1" />
+    <library name="Gradle: org.junit.platform:junit-platform-commons:1.8.2" type="java-imported" external-system-id="GRADLE">
+      <properties groupId="org.junit.platform" artifactId="junit-platform-commons" version="1.8.2" baseVersion="1.8.2" />
       <CLASSES>
-        <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.junit.platform/junit-platform-engine/1.8.1/e6c63bf990dc88a6527b4ed617b23e47048f07e0/junit-platform-engine-1.8.1.jar!/" />
+        <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.junit.platform/junit-platform-commons/1.8.2/32c8b8617c1342376fd5af2053da6410d8866861/junit-platform-commons-1.8.2.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
+    <library name="Gradle: org.junit.platform:junit-platform-engine:1.8.2" type="java-imported" external-system-id="GRADLE">
+      <properties groupId="org.junit.platform" artifactId="junit-platform-engine" version="1.8.2" baseVersion="1.8.2" />
+      <CLASSES>
+        <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.junit.platform/junit-platform-engine/1.8.2/b737de09f19864bd136805c84df7999a142fec29/junit-platform-engine-1.8.2.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
+    <library name="Gradle: org.mockito:mockito-core:4.3.1" type="java-imported" external-system-id="GRADLE">
+      <properties groupId="org.mockito" artifactId="mockito-core" version="4.3.1" baseVersion="4.3.1" />
+      <CLASSES>
+        <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.mockito/mockito-core/4.3.1/b35c904ac218ca833935e5fccc0aaaaf38225de3/mockito-core-4.3.1.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
+    <library name="Gradle: org.mockito:mockito-junit-jupiter:4.3.1" type="java-imported" external-system-id="GRADLE">
+      <properties groupId="org.mockito" artifactId="mockito-junit-jupiter" version="4.3.1" baseVersion="4.3.1" />
+      <CLASSES>
+        <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.mockito/mockito-junit-jupiter/4.3.1/92cb42a6ed620a6ca1daad178e5bbb64ff0b1d54/mockito-junit-jupiter-4.3.1.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
+    <library name="Gradle: org.objenesis:objenesis:3.2" type="java-imported" external-system-id="GRADLE">
+      <properties groupId="org.objenesis" artifactId="objenesis" version="3.2" baseVersion="3.2" />
+      <CLASSES>
+        <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.objenesis/objenesis/3.2/7fadf57620c8b8abdf7519533e5527367cb51f09/objenesis-3.2.jar!/" />
       </CLASSES>
       <JAVADOC />
       <SOURCES />
