@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e01f72a1-cc99-4225-ba36-2f9ffd49b507" name="변경" comment="요구사항 2-1 : findAll 구현">
-      <change afterPath="$PROJECT_DIR$/src/test/java/core/jdbc/SelectJdbcTemplateTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+    <list default="true" id="e01f72a1-cc99-4225-ba36-2f9ffd49b507" name="변경" comment="요구사항 2-1 : generateRowMapper test로 검증">
       <change beforePath="$PROJECT_DIR$/java-webMVC.iws" beforeDir="false" afterPath="$PROJECT_DIR$/java-webMVC.iws" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/core/jdbc/SelectJdbcTemplate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/jdbc/SelectJdbcTemplate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/core/jdbc/UpdateJdbcTemplate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/jdbc/UpdateJdbcTemplate.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -136,6 +135,7 @@
   "keyToString": {
     "Gradle.KUIT6_Server-webMVC [:WebServerLauncher.main()].executor": "Run",
     "Gradle.소스 다운로드.executor": "Run",
+    "JUnit.SelectJdbcTemplateTest.generateRowMapperTest.executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
@@ -287,7 +287,7 @@
       <updated>1759895024866</updated>
       <workItem from="1759895025810" duration="59000" />
       <workItem from="1761718311689" duration="27000" />
-      <workItem from="1761718388651" duration="5424000" />
+      <workItem from="1761718388651" duration="7062000" />
     </task>
     <task id="LOCAL-00001" summary="요구사항 1 : InsertJdbcTemplate, UpdateJdbcTemplate 구현">
       <option name="closed" value="true" />
@@ -305,7 +305,15 @@
       <option name="project" value="LOCAL" />
       <updated>1761722385313</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="요구사항 2-1 : generateRowMapper test로 검증">
+      <option name="closed" value="true" />
+      <created>1761724560322</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1761724560322</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -314,7 +322,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="요구사항 1 : InsertJdbcTemplate, UpdateJdbcTemplate 구현" />
     <MESSAGE value="요구사항 2-1 : findAll 구현" />
-    <option name="LAST_COMMIT_MESSAGE" value="요구사항 2-1 : findAll 구현" />
+    <MESSAGE value="요구사항 2-1 : generateRowMapper test로 검증" />
+    <option name="LAST_COMMIT_MESSAGE" value="요구사항 2-1 : generateRowMapper test로 검증" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
