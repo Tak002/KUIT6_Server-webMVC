@@ -1,8 +1,6 @@
 package jwp.dao;
 
-import core.jdbc.JdbcTemplate;
-import core.jdbc.PreparedStatementSetter;
-import core.jdbc.RowMapper;
+import core.jdbc.*;
 import jwp.model.User;
 
 import java.sql.SQLException;
@@ -10,27 +8,25 @@ import java.util.List;
 
 public class UserDao {
     private final JdbcTemplate<User> jdbcTemplate  = new JdbcTemplate();
-
+    private final InsertJdbcTemplate<User> insertJdbcTemplate = new InsertJdbcTemplate();
+    private final UpdateJdbcTemplate<User> updateJdbcTemplate = new UpdateJdbcTemplate();
+    private final String USER_TABLE_NAME = "USERS";
     public void insert(User user) throws SQLException {
-        String sql = "INSERT INTO USERS VALUES (?, ?, ?, ?)";
-        PreparedStatementSetter preparedStatementSetter = preparedStatement -> {
-            preparedStatement.setString(1, user.getUserId());
-            preparedStatement.setString(2, user.getPassword());
-            preparedStatement.setString(3, user.getName());
-            preparedStatement.setString(4, user.getEmail());
-        };
-        jdbcTemplate.update(sql, preparedStatementSetter);
+        insertJdbcTemplate.run(USER_TABLE_NAME, List.of(
+                user.getUserId(),
+                user.getPassword(),
+                user.getName(),
+                user.getEmail()
+        ));
     }
 
     public void update(User user) throws SQLException {
-        String sql = "UPDATE USERS SET password = ?, name = ?, email = ? WHERE userId = ?";
-        PreparedStatementSetter preparedStatementSetter = preparedStatement -> {
-            preparedStatement.setString(1, user.getPassword());
-            preparedStatement.setString(2, user.getName());
-            preparedStatement.setString(3, user.getEmail());
-            preparedStatement.setString(4, user.getUserId());
-        };
-        jdbcTemplate.update(sql, preparedStatementSetter);
+        updateJdbcTemplate.run(USER_TABLE_NAME, List.of(
+                user.getPassword(),
+                user.getName(),
+                user.getEmail(),
+                user.getUserId()
+        ));
     }
 
     public void delete(User user) throws SQLException {
