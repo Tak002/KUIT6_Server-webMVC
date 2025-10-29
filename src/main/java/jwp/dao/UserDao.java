@@ -10,9 +10,10 @@ public class UserDao {
     private final JdbcTemplate<User> jdbcTemplate  = new JdbcTemplate();
     private final InsertJdbcTemplate<User> insertJdbcTemplate = new InsertJdbcTemplate();
     private final UpdateJdbcTemplate<User> updateJdbcTemplate = new UpdateJdbcTemplate();
+    private final SelectJdbcTemplate<User> selectJdbcTemplate = new SelectJdbcTemplate();
     private final String USER_TABLE_NAME = "USERS";
     public void insert(User user) throws SQLException {
-        insertJdbcTemplate.run(USER_TABLE_NAME, List.of(
+        insertJdbcTemplate.insert(USER_TABLE_NAME, List.of(
                 user.getUserId(),
                 user.getPassword(),
                 user.getName(),
@@ -21,7 +22,7 @@ public class UserDao {
     }
 
     public void update(User user) throws SQLException {
-        updateJdbcTemplate.run(USER_TABLE_NAME, List.of(
+        updateJdbcTemplate.update(USER_TABLE_NAME, List.of(
                 user.getPassword(),
                 user.getName(),
                 user.getEmail(),
@@ -38,14 +39,7 @@ public class UserDao {
     }
 
     public List<User> findAll() throws  SQLException {
-        String sql = "SELECT * FROM USERS";
-        RowMapper rowMapper = resultSet -> new User(
-                resultSet.getString("userId"),
-                resultSet.getString("password"),
-                resultSet.getString("name"),
-                resultSet.getString("email")
-        );
-        return jdbcTemplate.query(sql, rowMapper);
+        return selectJdbcTemplate.findAll(USER_TABLE_NAME,List.of("userId","password","name","email"), User.class);
     }
 
     public User findUserById(String userId) throws  SQLException {
