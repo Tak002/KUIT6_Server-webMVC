@@ -29,8 +29,8 @@ public class QuestionDao {
         String sql = "SELECT * FROM QUESTIONS";
         RowMapper<Question> rowMapper = resultSet -> new Question(
                 resultSet.getLong("questionId"),
-                resultSet.getString("title"),
                 resultSet.getString("writer"),
+                resultSet.getString("title"),
                 resultSet.getString("contents"),
                 resultSet.getString("createdDate"),
                 resultSet.getInt("countOfAnswer")
