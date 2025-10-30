@@ -34,4 +34,14 @@ public class Question {
     public int getCountOfAnswer() {
         return countOfAnswer;
     }
+    public String toString(){
+        return "Question{" +
+                "questionId=" + questionId +
+                ", writer='" + writer + '\'' +
+                ", title='" + title + '\'' +
+                ", contents='" + contents + '\'' +
+                ", createdDate='" + createdDate + '\'' +
+                ", countOfAnswer=" + countOfAnswer +
+                '}';
+    }
 }

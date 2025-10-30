@@ -18,6 +18,8 @@ public class RequestMapper {
         mappings.put("/user/updateForm:GET", new UserUpdateFormController());
         mappings.put("/qna/form:GET", new CreateQuestionFormController());
         mappings.put("/user/loginForm:GET", new LoginFormController());
+        mappings.put("/qna/create:POST", new CreateQuestionController());
+        mappings.put("/qna/show:GET", new ShowQuestionController());
     }
 
     public Controller getMapping(String requestURI, String method) {
