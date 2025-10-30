@@ -9,6 +9,17 @@ import java.sql.SQLException;
 import java.util.List;
 
 public class UserDao {
+    private static UserDao userDao;
+    private UserDao() {
+    }
+
+    public static UserDao getInstance() {
+        if (userDao == null) {
+            userDao = new UserDao();
+            return userDao;
+        }
+        return userDao;
+    }
     private final JdbcTemplate<User> jdbcTemplate  = new JdbcTemplate();
 
     public void insert(User user) throws SQLException {
