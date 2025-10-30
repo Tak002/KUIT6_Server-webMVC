@@ -38,8 +38,8 @@ public class JdbcTemplate<T> {
         try(Connection connection = ConnectionManager.getConnection();
         PreparedStatement preparedStatement = connection.prepareStatement(sql);
         ){
-            ResultSet resultSet = preparedStatement.executeQuery();
             preparedStatementSetter.setParameters(preparedStatement);
+            ResultSet resultSet = preparedStatement.executeQuery();
             if(resultSet.next()){
                 object = rowMapper.mapRow(resultSet);
             }

@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.sql.SQLException;
 
 @WebServlet("/")
 public class DispatcherServlet extends HttpServlet {
@@ -37,17 +38,22 @@ public class DispatcherServlet extends HttpServlet {
         handleRequest(req, resp);
     }
 
-    private void handleRequest(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    private void handleRequest(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException{
         String requestURI = req.getRequestURI();
         String method = req.getMethod();
         System.out.println("requestURI = " + requestURI);
         System.out.println("method = " + method);
         Controller controller = requestMapper.getMapping(requestURI, method);
+        try{
         String view = process(req, resp, controller);
         renderView(req, resp, view);
+
+        }catch(Exception e){
+            throw new ServletException(e);
+        }
     }
 
-    private String process(HttpServletRequest req, HttpServletResponse resp, Controller controller) throws ServletException, IOException {
+    private String process(HttpServletRequest req, HttpServletResponse resp, Controller controller) throws ServletException, IOException, SQLException {
         if(controller == null) {
             return null;
         }
