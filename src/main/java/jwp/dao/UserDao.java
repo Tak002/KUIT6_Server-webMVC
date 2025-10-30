@@ -20,7 +20,7 @@ public class UserDao {
         }
         return userDao;
     }
-    private final JdbcTemplate<User> jdbcTemplate  = new JdbcTemplate();
+    private final JdbcTemplate<User> jdbcTemplate  = new JdbcTemplate<>();
 
     public void insert(User user) throws SQLException {
         String sql = "INSERT INTO USERS VALUES (?, ?, ?, ?)";
@@ -54,7 +54,7 @@ public class UserDao {
 
     public List<User> findAll() throws  SQLException {
         String sql = "SELECT * FROM USERS";
-        RowMapper rowMapper = resultSet -> new User(
+        RowMapper<User> rowMapper = resultSet -> new User(
                 resultSet.getString("userId"),
                 resultSet.getString("password"),
                 resultSet.getString("name"),
@@ -68,7 +68,7 @@ public class UserDao {
         PreparedStatementSetter preparedStatementSetter = preparedStatement -> {
             preparedStatement.setString(1, userId);
         };
-        RowMapper rowMapper = resultSet -> new User(
+        RowMapper<User> rowMapper = resultSet -> new User(
                 resultSet.getString("userId"),
                 resultSet.getString("password"),
                 resultSet.getString("name"),
