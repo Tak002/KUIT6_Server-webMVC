@@ -16,6 +16,8 @@ public class RequestMapper {
         mappings.put("/user/logout:GET", new LogoutController());
         mappings.put("/user/update:POST", new UpdateUserController());
         mappings.put("/user/updateForm:GET", new UserUpdateFormController());
+        mappings.put("/qna/form:GET", new CreateQuestionFormController());
+        mappings.put("/user/loginForm:GET", new LoginFormController());
     }
 
     public Controller getMapping(String requestURI, String method) {
