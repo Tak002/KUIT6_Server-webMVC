@@ -15,6 +15,6 @@ public class HomeController{
 	@GetMapping("/")
 	public String home(Model model) throws SQLException {
 		model.addAttribute("questions",questionDao.findAll());
-		return "/home.jsp";
+		return "home";
 	}
 }
