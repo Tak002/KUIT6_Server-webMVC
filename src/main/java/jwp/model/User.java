@@ -1,33 +1,27 @@
 package jwp.model;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Getter
+@Entity
+@Table(name = "USERS")
+@NoArgsConstructor
+@AllArgsConstructor
+@ToString
 public class User {
+    @Id
     private String userId;
     private String password;
     private String name;
     private String email;
 
-    public User(String userId, String password, String name, String email) {
-        this.userId = userId;
-        this.password = password;
-        this.name = name;
-        this.email = email;
-    }
-
-    public String getUserId() {
-        return userId;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public String getEmail() {
-        return email;
-    }
 
     public void update(User updateUser) {
         this.password = updateUser.password;
@@ -86,10 +80,5 @@ public class User {
         } else if (!userId.equals(other.userId))
             return false;
         return true;
-    }
-
-    @Override
-    public String toString() {
-        return "User [userId=" + userId + ", name=" + name + ", email=" + email + "]";
     }
 }

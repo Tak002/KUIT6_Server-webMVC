@@ -1,47 +1,26 @@
 package jwp.model;
 
-public class Question {
-    private final Long questionId;
-    private final String writer;
-    private final String title;
-    private final String contents;
-    private final String createdDate;
-    private final int countOfAnswer;
-    public Question(Long questionId, String writer, String title, String contents, String createdDate, int countOfAnswer) {
-        this.questionId = questionId;
-        this.writer = writer;
-        this.title = title;
-        this.contents = contents;
-        this.createdDate = createdDate;
-        this.countOfAnswer = countOfAnswer;
-    }
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
 
-    public Long getQuestionId() {
-        return questionId;
-    }
-    public String getWriter() {
-        return writer;
-    }
-    public String getTitle() {
-        return title;
-    }
-    public String getContents() {
-        return contents;
-    }
-    public String getCreatedDate() {
-        return createdDate;
-    }
-    public int getCountOfAnswer() {
-        return countOfAnswer;
-    }
-    public String toString(){
-        return "Question{" +
-                "questionId=" + questionId +
-                ", writer='" + writer + '\'' +
-                ", title='" + title + '\'' +
-                ", contents='" + contents + '\'' +
-                ", createdDate='" + createdDate + '\'' +
-                ", countOfAnswer=" + countOfAnswer +
-                '}';
-    }
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Getter
+@Entity
+@Table(name = "QUESTIONS")
+@NoArgsConstructor
+@AllArgsConstructor
+@ToString
+public class Question {
+    @Id
+    private Long questionId;
+    private String writer;
+    private String title;
+    private String contents;
+    private String createdDate;
+    private int countOfAnswer;
 }
