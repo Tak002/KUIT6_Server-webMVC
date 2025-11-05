@@ -1,15 +1,13 @@
 package jwp.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.ToString;
+import lombok.*;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Getter
+@Setter
 @Entity
 @Table(name = "USERS")
 @NoArgsConstructor

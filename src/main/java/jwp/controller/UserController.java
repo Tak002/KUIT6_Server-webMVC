@@ -4,6 +4,7 @@ import jwp.dao.UserDao;
 import jwp.model.User;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -38,6 +39,8 @@ public class UserController {
     
     @PostMapping("/signup")
     public String signup(@ModelAttribute User user) throws ServletException, IOException, SQLException {
+
+        System.out.println("user = " + user);
         userDao.insert(user);
 
         return "redirect:" + "/";

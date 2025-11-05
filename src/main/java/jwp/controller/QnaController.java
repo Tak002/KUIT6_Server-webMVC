@@ -44,7 +44,7 @@ public class QnaController {
         KeyHolder keyHolder = new KeyHolder();
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
         String createdDate = LocalDateTime.now().format(formatter);
-        questionDao.insert(new Question(null, writer, title, contents,createdDate , 0),keyHolder);
+        questionDao.insert(new Question(null, writer, title, contents,createdDate , 0));
 
         Question question = questionDao.findQuestionById(keyHolder.getId());
         if(question == null){

@@ -3,8 +3,10 @@ package jwp.dao;
 import jwp.model.User;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 import java.sql.SQLException;
 import java.util.List;
 
@@ -13,6 +15,7 @@ import java.util.List;
 public class UserDao {
     private final EntityManager em;
 
+    @Transactional
     public void insert(User user) throws SQLException {
         em.persist(user);
     }
